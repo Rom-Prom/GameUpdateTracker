@@ -24,7 +24,7 @@ public class Driver
       String serverFeedback = server.nextLine();
       Gson gson = new Gson();
       Newsfeed feed = gson.fromJson(serverFeedback, Newsfeed.class); 
-      System.out.println("Processing titles of 30 most recent updates to YOMI Hustle, please wait...");
+      System.out.println("Processing titles of 30 most recent updates to appid " + appid + " please wait...");
       
       for (int index = 0; index < 29; index++) {   // this for loop displays each update. you can turn it off if you want, its only a temp fix.
          System.out.println(feed.appnews.newsitems[index].title);
