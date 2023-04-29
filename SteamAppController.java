@@ -25,27 +25,27 @@ public class SteamAppController implements Initializable
     
    private String [] games = {
                               "Apex Legends",
-                              "Call of duty- Mordern Warefare 2", // FLAG: no image, no news
-                              "Counter Strike: Global Offensive", // FLAG: no news
+                              "Call of duty: Mordern Warefare 2", 
+                              "Counter Strike: Global Offensive",                              
                               "Destiny 2", 
-                              "Dragon Ball Fighterz", // FLAG: no news
+                              "Dragon Ball Fighterz",                              
+                              "Guilty Grear Strive",
                               "King Of Fighters XV", 
-                              "Sea of Thieves", // FLAG: incorrect image
-                              "Rainbow Six Siege", // FLAG: no image
-                              "Guilty Gear Strive", // FLAG: incorrect image
+                              "Rainbow Six Siege", 
+                              "Sea of Thieves",                             
                               "Tekken 8"
                               };
                               
    private Image [] gameImages = {
                                     new Image("file:STEAM_APP_IMAGES\\Apex_Legends.jpg"), 
-                                    new Image("file:STEAM_APP_IMAGES\\Call_Of_Duty_ModernWare_2.jpg"), 
+                                    new Image("file:STEAM_APP_IMAGES\\Call_Of_Duty_ModernWarfare_2.jpg"), 
                                     new Image("file:STEAM_APP_IMAGES\\Counter_Strike_Global_Offensive.jpg"), 
                                     new Image("file:STEAM_APP_IMAGES\\Destiny_2.jpg"), 
                                     new Image("file:STEAM_APP_IMAGES\\Dragon_Ball_Fighterz.jpg"), 
-                                    new Image("file:STEAM_APP_IMAGES\\King_Of_Fighters_15.jpg"), 
-                                    new Image("file:STEAM_APP_IMAGES\\League_Of_Legends.jpg"), 
-                                    new Image("file:STEAM_APP_IMAGES\\Rainbox_Six_Siege.jpg"),
-                                    new Image("file:STEAM_APP_IMAGES\\Tekken_7.jpg"), 
+                                    new Image("file:STEAM_APP_IMAGES\\Guilty_Gear_Strive.jpg"),
+                                    new Image("file:STEAM_APP_IMAGES\\King_Of_Fighters_15.jpg"),
+                                    new Image("file:STEAM_APP_IMAGES\\Rainbow_Six_Siege.jpg"),                                    
+                                    new Image("file:STEAM_APP_IMAGES\\Sea_Of_Thieves.jpg"), 
                                     new Image("file:STEAM_APP_IMAGES\\Tekken_8.jpg")
                                     };
                                     
@@ -55,10 +55,10 @@ public class SteamAppController implements Initializable
                                  730,
                                  1085660,
                                  678950, 
+                                 1384160,
                                  1498570,
-                                 1172620, 
-                                 359550, 
-                                 1384160, 
+                                 359550,
+                                 1172620,
                                  1778820
                                  };
     
@@ -66,39 +66,39 @@ public class SteamAppController implements Initializable
                                     "Respawn Entertainment",
                                     "Activision Shanghai & more",
                                     "Valve & Hidden Path Entertainment", 
-                                    "Bungie", 
+                                    "Bungie Inc", 
                                     "Arc System Works",
-                                    "SNK CORPORATION", 
-                                    "Rare Ltd", 
-                                    "Ubisoft Montreal",
                                     "Arc System Works", 
+                                    "SNK Corporation", 
+                                    "Ubisoft Montreal",
+                                    "Rare Ltd", 
                                     "Bandai Namco Studios Inc."
                                     };
-                              
+                          
    private String [] publishers = {
                                     "Electronic Arts",
                                     "Activision",
                                     "Valve", 
-                                    "Bungie", 
+                                    "Bungie Inc. and Activison", 
                                     "Bandai Namco Entertainment",
-                                    "SNK CORPORATION", 
-                                    "Xbox Game Studios", 
-                                    "Ubisoft",
                                     "Arc System Works", 
+                                    "SNK Corporation", 
+                                    "Ubisoft",
+                                    "Microsoft Studios", 
                                     "Bandai Namco Entertainment"
                                     };
-                              
+                          
    private String [] categories = {
                                     "First-Person Shooter",
                                     "First-Person Shooter",
                                     "First-Person Shooter", 
                                     "First-Person Shooter", 
-                                    "Fighting Game",
-                                    "Fighting Game", 
-                                    "YARRRR", 
+                                    "Fighting",
+                                    "Fighting", 
+                                    "Fighting", 
                                     "First-Person Shooter",
-                                    "Fighting Game", 
-                                    "Fighting Game"
+                                    "Action Advenutre", 
+                                    "Fighting"
                                     };
    @FXML
    private Button getUpdates;
@@ -129,8 +129,7 @@ public class SteamAppController implements Initializable
    
    
    @FXML
-   public void updateDisplay() throws Exception // GET RID OF THE throws Exception CLAUSE IN RELEASE BUILD
-   {
+   public void updateDisplay()    {
       System.out.println("Button pressed");
       if(gameName.getSelectionModel().getSelectedIndex() >= 0)
       {
@@ -153,9 +152,9 @@ public class SteamAppController implements Initializable
                updateURL = NewsGenerator.feed.appnews.newsitems[index].url;
                updateContents.setText(NewsGenerator.feed.appnews.newsitems[index].contents);
             } else {
-               updateTitle.setText("Error");
+               updateTitle.setText("NO UPDATE FOUND FOR THIS GAME!");
                updateLink.setText("");
-               updateContents.setText("No recent Steam news entries have contained any patchnotes or in-game updates. Either an internal error has occurred, or this game has not received a proper update in a very long time.");
+               updateContents.setText("No recent Steam news entries have contained any patchnotes or in-game updates. Either an internal error has occurred, or this game has not received a proper update in recent times.");
             }
          } catch (NullPointerException n) {
             if (NewsGenerator.feed.appnews.newsitems[0].feed_type > 0) {
@@ -164,16 +163,16 @@ public class SteamAppController implements Initializable
                updateURL = NewsGenerator.feed.appnews.newsitems[index].url;
                updateContents.setText(NewsGenerator.feed.appnews.newsitems[index].contents);
             } else {
-               updateTitle.setText("Error");
+               updateTitle.setText("NO UPDATE FOUND FOR THIS GAME!");
                updateLink.setText("");
-               updateContents.setText("No recent Steam news entries have contained any patchnotes or in-game updates. Either an internal error has occurred, or this game has not received a proper update in a very long time.");
+               updateContents.setText("No recent Steam news entries have contained any patchnotes or in-game updates. Either an internal error has occurred, or this game has not received a proper update in recent time.");
             }
          }
       }
    }
    
    @FXML
-   public void openLink() throws Exception // since i studied the web for this code, ill explain it while im here
+   public void openLink() throws Exception // since I studied the web for this code, ill explain it while im here
    {
       if (Desktop.isDesktopSupported() && Desktop.getDesktop().isSupported(Desktop.Action.BROWSE)) { // checks if user's hardware + software support the class used to open a hyperlink here
          Desktop.getDesktop().browse(new URI(updateURL)); // if hyperlink opening is supported, opens a hyperlink, using link found in newsfeed

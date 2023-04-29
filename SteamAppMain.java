@@ -19,7 +19,7 @@ public class SteamAppMain extends Application
    }
    
    @Override
-   public void start(Stage stage) throws Exception // GET RID OF THE throws Exception CLAUSE IN RELEASE BUILD
+   public void start(Stage stage) throws Exception 
    {
       Parent root = FXMLLoader.load(getClass().getResource("SteamApp.fxml"));    
       Scene scene = new Scene(root);
