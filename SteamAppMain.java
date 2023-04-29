@@ -9,20 +9,24 @@ import javafx.util.*;
 
 public class SteamAppMain extends Application
 {
+   
+   
+   
+   
    public static void main(String[] args)
    {
       launch(args);
    }
-
+   
    @Override
-   public void start(Stage stage) throws Exception
+   public void start(Stage stage) throws Exception // GET RID OF THE throws Exception CLAUSE IN RELEASE BUILD
    {
       Parent root = FXMLLoader.load(getClass().getResource("SteamApp.fxml"));    
-      Scene scene = new Scene(root);      
+      Scene scene = new Scene(root);
       stage.setTitle("Steam Game Update Tracker");
       
       stage.setScene(scene);
-      stage.show();  
+      stage.show();
    }
    
 }
