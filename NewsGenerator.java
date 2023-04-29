@@ -1,24 +1,21 @@
-import java.util.Scanner;
-import java.net.URL;
-// import java.text.SimpleDateFormat;     (we'll need this import statement later down the line so keep it on speed dial)
-import com.google.gson.Gson;
-import java.io.*;
 import javafx.event.EventHandler;
 import javafx.event.ActionEvent;
+import com.google.gson.Gson;
+import java.util.Scanner;
+import java.net.URL;
+import java.io.*;
 
 public class NewsGenerator
 {
    public static Newsfeed feed;   // core newsfeed variable. all variables static because only 1 newsfeed at a time.
    public static int appid = 0;       // the appid field is the game's internal ID, as preferred by the user
-   public static int count = 10;       // the count field is the number of entries as preferred by the user
+   public static int count = 23;       // the count field is the number of entries as preferred by the user. 23 is maximum because KoF has only 23 entries.
    public static int maxlength = 100;   // the maxlength field is the maximum characters of the String contents within the JSON as preferred by the user
    
 //    public static void main(String[] args)
 //    {
 //       createNewsfeed(appid, count, maxlength);
-//    }
-   
-   
+//    } // for debugging use
    
    public static void createNewsfeed(int appid, int count, int maxlength)
    {
@@ -31,7 +28,7 @@ public class NewsGenerator
          Gson gson = new Gson();                                     // make a gson object which will contain json later
          feed = gson.fromJson(serverFeedback, Newsfeed.class);       // feed the json into the gson to output our news
       } catch (IOException i) {
-         // we should put something here lol
+         System.out.println("Error attempting to call API and derive GSON");
       }
       
       //       !! ~ ALTERNATE API CALLS ~ !!
@@ -40,6 +37,4 @@ public class NewsGenerator
       // http://api.steampowered.com/ISteamNews/GetNewsForApp/v0002/?appid=1384160&count=9&maxlength=500&format=json    (GGST - 9 mid-length entries)
       
    } // createNewsfeed() closing brackets 
-
-   
 } // class closing brackets
