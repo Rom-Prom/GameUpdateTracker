@@ -47,8 +47,12 @@
       <VBox layoutX="55.0" layoutY="425.0" prefHeight="182.0" prefWidth="286.0">
          <children>
             <Label fx:id="updateTitle" alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="294.0" style="-fx-background-color: white; -fx-font-weight: bold;" text="Title" wrapText="true" />
-            <Label prefHeight="20.0" prefWidth="289.0" style="-fx-background-color: white; -fx-alignment: center; -fx-font-weight: bold;" text="Release Date" textFill="#309fba" />
-            <Label fx:id="updateDate" alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="310.0" style="-fx-background-color: white; -fx-font-weight: bold;" text="Posted On" wrapText="true" />
+            <HBox prefHeight="29.0" prefWidth="286.0">
+               <children>
+                  <Label alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="250.0" style="-fx-background-color: white; -fx-alignment: center; -fx-font-weight: bold;" text="Release Date" textFill="#309fba" />
+                  <Label fx:id="updateDate" alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="310.0" style="-fx-background-color: white; -fx-font-weight: bold;" text="Posted On" wrapText="true" />
+               </children>
+            </HBox>
             <Hyperlink fx:id="updateLink" alignment="CENTER" onAction="#openLink" prefHeight="26.0" prefWidth="298.0" style="-fx-background-color: white; -fx-font-weight: bold;" text="Hyperlink" textAlignment="JUSTIFY" wrapText="true">
                <font>
                   <Font size="10.0" />
