@@ -147,7 +147,7 @@ public class SteamAppController implements Initializable
 //       } // this is all debugging code
       
       // this line makes the actual newsfeed
-      NewsGenerator.createNewsfeed(gameIDs[gameName.getSelectionModel().getSelectedIndex()], NewsGenerator.count, 200);
+      NewsGenerator.createNewsfeed(gameIDs[gameName.getSelectionModel().getSelectedIndex()], NewsGenerator.count, NewsGenerator.maxlength);
       // System.out.println(NewsGenerator.feed); // debugging code
       
       // sets the game information and image
@@ -177,7 +177,7 @@ public class SteamAppController implements Initializable
                updateTitle.setText(NewsGenerator.feed.appnews.newsitems[index].title);
                postTimestamp.setTimeInMillis(NewsGenerator.feed.appnews.newsitems[index].date * 1000); // writes timestamp according to the date variable in the newsfeed
                formattedDate = fmt.format(this.postTimestamp.getTime());   // writes up the gregorian calendar object via the postTimestamp
-               updateDate.setText(formattedDate);
+               updateDate.setText("Release Date:  " + formattedDate);
                updateLink.setText(NewsGenerator.feed.appnews.newsitems[index].url);
                updateURL = NewsGenerator.feed.appnews.newsitems[index].url;
                updateContents.setText(NewsGenerator.feed.appnews.newsitems[index].contents);
@@ -189,7 +189,7 @@ public class SteamAppController implements Initializable
                   updateTitle.setText(NewsGenerator.feed.appnews.newsitems[index].title);
                   postTimestamp.setTimeInMillis(NewsGenerator.feed.appnews.newsitems[index].date * 1000);
                   formattedDate = fmt.format(this.postTimestamp.getTime());
-                  updateDate.setText(formattedDate);
+                  updateDate.setText("Release Date:  " + formattedDate);
                   updateLink.setText(NewsGenerator.feed.appnews.newsitems[index].url);
                   updateURL = NewsGenerator.feed.appnews.newsitems[index].url;
                   updateContents.setText(NewsGenerator.feed.appnews.newsitems[index].contents);
@@ -201,7 +201,7 @@ public class SteamAppController implements Initializable
                updateTitle.setText(NewsGenerator.feed.appnews.newsitems[index].title);
                postTimestamp.setTimeInMillis(NewsGenerator.feed.appnews.newsitems[index].date * 1000);
                formattedDate = fmt.format(this.postTimestamp.getTime());
-               updateDate.setText(formattedDate);
+               updateDate.setText("Release Date:  " + formattedDate);
                updateLink.setText(NewsGenerator.feed.appnews.newsitems[index].url);
                updateURL = NewsGenerator.feed.appnews.newsitems[index].url;
                updateContents.setText(NewsGenerator.feed.appnews.newsitems[index].contents);

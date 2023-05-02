@@ -9,8 +9,8 @@ public class NewsGenerator
 {
    public static Newsfeed feed;   // core newsfeed variable. all variables static because only 1 newsfeed at a time.
    public static int appid = 0;       // the appid field is the game's internal ID, as preferred by the user
-   public static int count = 23;       // the count field is the number of entries as preferred by the user. 23 is maximum because KoF has only 23 entries.
-   public static int maxlength = 100;   // the maxlength field is the maximum characters of the String contents within the JSON as preferred by the user
+   public static int count = 18;       // the count field is the number of entries as preferred by the user. 23 is maximum because Tekken 8 has only 18 entries.
+   public static int maxlength = 820;   // the maxlength field is the maximum characters of the String contents within the JSON as preferred by the user
    
 //    public static void main(String[] args)
 //    {
