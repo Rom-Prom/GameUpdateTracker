@@ -9,38 +9,34 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="825.0" prefWidth="540.0" styleClass="styles.css" stylesheets="@SteamStyles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SteamAppController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="840.0" prefWidth="540.0" styleClass="styles.css" stylesheets="@SteamStyles.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SteamAppController">
    <children>
       <Label layoutX="131.0" prefHeight="49.0" prefWidth="278.0" style="-fx-font-weight: bold; -fx-font-size: 23;" text="GAME UPDATE TRACKER" textFill="WHITE">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <ImageView fx:id="steamImage" fitHeight="224.0" fitWidth="191.0" layoutX="175.0" layoutY="128.0" pickOnBounds="true" scaleX="1.5" AnchorPane.bottomAnchor="387.0" AnchorPane.leftAnchor="175.0" AnchorPane.rightAnchor="234.0" AnchorPane.topAnchor="128.0">
-         <image>
-            <Image url="@STEAM_APP_IMAGES/Steam_Image.jpg" />
-         </image>
-      </ImageView>
-      <ChoiceBox fx:id="gameName" layoutX="127.0" layoutY="46.0" prefHeight="20.0" prefWidth="287.0" style="-fx-background-color: white;" />
+      <ChoiceBox fx:id="gameName" layoutX="127.0" layoutY="46.0" prefHeight="20.0" prefWidth="287.0" style="-fx-background-color: #d0dfff;" />
       <Label layoutX="182.0" layoutY="357.0" prefHeight="26.0" prefWidth="177.0" style="-fx-font-weight: bold; -fx-font-size: 17; -fx-alignment: center;" text="GAME INFO." textFill="WHITE" />
       <HBox layoutX="55.0" layoutY="402.0" prefHeight="27.0" prefWidth="287.0" />
-      <VBox layoutX="20.0" layoutY="497.0" prefHeight="315.0" prefWidth="500.0">
+      <VBox layoutX="20.0" layoutY="504.0" prefHeight="315.0" prefWidth="500.0">
          <children>
-            <Label fx:id="updateTitle" alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="500.0" style="-fx-background-color: white; -fx-font-weight: bold;" text="Title" wrapText="true" />
+            <Label fx:id="updateTitle" alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="500.0" style="-fx-background-color: #d0dfff; -fx-font-weight: bold;" text="Title" wrapText="true" />
             <HBox prefHeight="20.0" prefWidth="286.0">
                <children>
-                  <Label fx:id="updateDate" alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="500.0" style="-fx-background-color: white; -fx-font-weight: bold;" text="Posted On" wrapText="true" />
+                  <Label fx:id="updateDate" alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="500.0" style="-fx-background-color: #d0dfff; -fx-font-weight: bold;" text="Posted On" wrapText="true" />
                </children>
             </HBox>
-            <Hyperlink fx:id="updateLink" alignment="CENTER" onAction="#openLink" prefHeight="20.0" prefWidth="500.0" style="-fx-background-color: white; -fx-font-weight: bold;" text="Hyperlink" textAlignment="JUSTIFY" wrapText="true">
+            <Hyperlink fx:id="updateLink" alignment="CENTER" onAction="#openLink" prefHeight="20.0" prefWidth="500.0" style="-fx-background-color: #d0dfff; -fx-font-weight: bold;" text="Hyperlink" textAlignment="JUSTIFY" wrapText="true">
                <font>
                   <Font size="10.0" />
                </font>
             </Hyperlink>
-            <Label fx:id="updateContents" alignment="TOP_LEFT" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="250.0" prefWidth="500.0" style="-fx-background-color: white; -fx-font-weight: bold;" text="Contents " wrapText="true">
+            <Label fx:id="updateContents" alignment="TOP_LEFT" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="250.0" prefWidth="500.0" style="-fx-background-color: #d0dfff; -fx-font-weight: bold;" text="Contents " wrapText="true">
                <padding>
                   <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
                </padding></Label>
@@ -48,32 +44,44 @@
       </VBox>
       <HBox layoutX="127.0" layoutY="85.0" prefHeight="37.0" prefWidth="287.0">
          <children>
-            <Button fx:id="getUpdates" mnemonicParsing="false" onAction="#updateDisplay" prefHeight="30.0" prefWidth="143.0" style="-fx-background-color: white; -fx-font-weight: bold;" text="GET UPDATES" />
-            <Button fx:id="markFave" mnemonicParsing="false" onAction="#markFave" prefHeight="30.0" prefWidth="143.0" style="-fx-background-color: white; -fx-font-weight: bold;" text="MARK AS FAV." />
+            <Button fx:id="getUpdates" mnemonicParsing="false" onAction="#updateDisplay" prefHeight="30.0" prefWidth="143.0" style="-fx-background-color: #efefff; -fx-font-weight: bold; -fx-border-width: 3;" text="GET UPDATES" />
+            <Button fx:id="markFave" alignment="CENTER" mnemonicParsing="false" onAction="#markFave" prefHeight="30.0" prefWidth="143.0" style="-fx-background-color: #efefff; -fx-font-weight: bold; -fx-border-width: 3;" text="MARK AS FAV." />
          </children>
       </HBox>
-      <VBox layoutX="120.0" layoutY="388.0" prefHeight="83.0" prefWidth="300.0" spacing="5.0">
+      <VBox layoutX="120.0" layoutY="388.0" prefHeight="74.0" prefWidth="300.0" spacing="5.0" style="-fx-border-color: white;">
          <children>
             <HBox prefHeight="20.0" prefWidth="400.0">
                <children>
-                  <Label prefHeight="20.0" prefWidth="75.0" style="-fx-background-color: white; -fx-font-weight: bold;" text="Developer:" />
-                  <Label fx:id="developerName" alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="225.0" style="-fx-background-color: white; -fx-font-weight: bold;" text="-" />
+                  <Label prefHeight="20.0" prefWidth="75.0" style="-fx-font-weight: bold;" text="Developer:" textFill="WHITE" />
+                  <Label fx:id="developerName" alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="225.0" style="-fx-font-weight: bold;" text="-" textFill="WHITE" />
                </children>
             </HBox>
             <HBox prefHeight="20.0" prefWidth="400.0">
                <children>
-                  <Label prefHeight="20.0" prefWidth="75.0" style="-fx-background-color: white; -fx-font-weight: bold;" text="Publisher:" />
-                  <Label fx:id="publisherName" alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="225.0" style="-fx-background-color: white; -fx-font-weight: bold;" text="-" />
+                  <Label prefHeight="20.0" prefWidth="75.0" style="-fx-font-weight: bold;" text="Publisher:" textFill="WHITE" />
+                  <Label fx:id="publisherName" alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="225.0" style="-fx-font-weight: bold;" text="-" textFill="WHITE" />
                </children>
             </HBox>
             <HBox prefHeight="20.0" prefWidth="400.0">
                <children>
-                  <Label prefHeight="20.0" prefWidth="75.0" style="-fx-background-color: white; -fx-font-weight: bold;" text="Category:" />
-                  <Label fx:id="categoryName" alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="225.0" style="-fx-background-color: white; -fx-font-weight: bold;" text="-" />
+                  <Label prefHeight="20.0" prefWidth="75.0" style="-fx-font-weight: bold;" text="Category:" textFill="WHITE" />
+                  <Label fx:id="categoryName" alignment="CENTER_RIGHT" prefHeight="20.0" prefWidth="225.0" style="-fx-font-weight: bold;" text="-" textFill="WHITE" />
                </children>
             </HBox>
          </children>
+         <padding>
+            <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+         </padding>
       </VBox>
-      <Label layoutX="128.0" layoutY="464.0" prefHeight="27.0" prefWidth="286.0" style="-fx-font-weight: bold; -fx-font-size: 17; -fx-alignment: center;" text="MOST RECENT NEWS &amp; UPDATES" textFill="WHITE" />
+      <Label layoutX="127.0" layoutY="466.0" prefHeight="37.0" prefWidth="286.0" style="-fx-font-weight: bold; -fx-font-size: 17; -fx-alignment: center;" text="MOST RECENT NEWS &amp; UPDATES" textFill="WHITE" />
+      <Pane layoutX="127.0" layoutY="125.0" prefHeight="227.0" prefWidth="287.0" style="-fx-border-color: white; -fx-border-width: 6;">
+         <children>
+            <ImageView fx:id="steamImage" fitHeight="225.0" fitWidth="285.0" layoutX="1.0" layoutY="1.0" opacity="0.8" pickOnBounds="true">
+               <image>
+                  <Image url="@STEAM_APP_IMAGES/Steam_Image.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>
